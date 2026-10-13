@@ -1,0 +1,25 @@
+{
+  "_fonte": "docs/base-cientifica.md › Calistenia: progressões por movimento (caminho principal da Recommended Routine)",
+  "_regra": "Dinâmicos: começa em 3x(faixa.min) e soma 1 rep por série a cada treino até 3x(faixa.max); aí sobe de nível. Isométricos: 3x10 s até 3x30 s.",
+  "escadas": [
+    { "id": "puxar_vertical", "nome": "Barra (puxada vertical)", "faixa": { "min": 5, "max": 8 }, "nivelInicial": 2,
+      "niveis": ["escapula_barra", "arch_hang", "barra_negativa", "barra", "barra_peso"] },
+    { "id": "joelho", "nome": "Agachamento", "faixa": { "min": 5, "max": 8 }, "nivelInicial": 1,
+      "niveis": ["agachamento_assistido", "agachamento", "afundo", "bulgaro", "shrimp_iniciante", "shrimp_intermediario", "shrimp_avancado"] },
+    { "id": "empurrar_vertical", "nome": "Paralelas", "faixa": { "min": 5, "max": 8 }, "nivelInicial": 0,
+      "niveis": ["paralela_sustentacao", "paralela_negativa", "paralela", "paralela_peso"] },
+    { "id": "quadril", "nome": "Dobradiça de quadril", "faixa": { "min": 5, "max": 8 }, "nivelInicial": 0,
+      "niveis": ["stiff_corporal", "stiff_unilateral", "nordica_negativa_elastico", "nordica_elastico", "nordica"] },
+    { "id": "puxar_horizontal", "nome": "Remada", "faixa": { "min": 5, "max": 8 }, "nivelInicial": 1,
+      "niveis": ["remada_vertical", "remada_inclinada", "remada_horizontal", "remada_aberta", "remada_peso"] },
+    { "id": "empurrar_horizontal", "nome": "Flexão", "faixa": { "min": 5, "max": 8 }, "nivelInicial": 1,
+      "niveis": ["flexao_parede", "flexao_inclinada", "flexao", "flexao_diamante", "flexao_pseudo_planche"] },
+    { "id": "core_antiextensao", "nome": "Core – antiextensão", "faixa": { "min": 8, "max": 12 }, "nivelInicial": 0,
+      "niveis": ["prancha", "rollout"] },
+    { "id": "core_antirrotacao", "nome": "Core – antirrotação", "faixa": { "min": 8, "max": 12 }, "nivelInicial": 0,
+      "niveis": ["pallof_elastico"] },
+    { "id": "core_extensao", "nome": "Core – extensão", "faixa": { "min": 8, "max": 12 }, "nivelInicial": 0,
+      "niveis": ["hiperextensao_reversa"] }
+  ],
+  "faixaIsometrica": { "min": 10, "max": 30 }
+}

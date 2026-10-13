@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Academia em Casa</title>
+  <meta name="theme-color" content="#0f1113">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Academia">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="apple-touch-icon" href="icons/icon-180.png">
+  <link rel="icon" href="icons/icon-192.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main id="tela" aria-live="polite"></main>
+
+  <nav class="abas" aria-label="Navegação">
+    <button data-aba="hoje" class="ativa">Hoje</button>
+    <button data-aba="historico">Histórico</button>
+    <button data-aba="biblioteca">Biblioteca</button>
+    <button data-aba="ajustes">Ajustes</button>
+  </nav>
+
+  <section id="treino" class="sobreposicao" hidden></section>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>

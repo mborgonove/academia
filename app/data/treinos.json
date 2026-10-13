@@ -1,0 +1,54 @@
+{
+  "_fonte": "docs/base-cientifica.md › Programa iniciante: calistenia + aparelhos",
+  "_opcoes": "Cada vaga lista opções em ordem de preferência. O app usa a primeira cujo equipamento está marcado como disponível. 'exercicio' = aparelho/halter com carga (dupla progressão); 'escada' = calistenia.",
+  "descansoSegundos": 90,
+  "faixaCarga": { "min": 8, "max": 12 },
+  "fases": [
+    { "ateSemana": 2, "nome": "Adaptação", "series": 2, "rir": "3" },
+    { "ateSemana": 8, "nome": "Base", "series": 3, "rir": "1–2" },
+    { "ateSemana": null, "nome": "Continuidade", "series": 3, "rir": "1–2" }
+  ],
+  "treinos": [
+    { "id": "A", "nome": "Treino A", "blocos": [
+      { "tipo": "par", "vagas": [
+        { "id": "A1a", "padrao": "joelho", "opcoes": [{ "exercicio": "agachamento_goblet" }, { "escada": "joelho" }] },
+        { "id": "A1b", "padrao": "puxar_vertical", "opcoes": [{ "exercicio": "puxada_alta" }, { "escada": "puxar_vertical" }] }
+      ]},
+      { "tipo": "par", "vagas": [
+        { "id": "A2a", "padrao": "empurrar_horizontal", "opcoes": [{ "exercicio": "supino_halteres" }, { "exercicio": "supino_maquina" }, { "escada": "empurrar_horizontal" }] },
+        { "id": "A2b", "padrao": "quadril", "opcoes": [{ "exercicio": "stiff_halteres" }, { "escada": "quadril" }] }
+      ]},
+      { "tipo": "trio", "vagas": [
+        { "id": "A3a", "padrao": "core_antiextensao", "opcoes": [{ "escada": "core_antiextensao" }] },
+        { "id": "A3b", "padrao": "core_antirrotacao", "opcoes": [{ "exercicio": "pallof_cabo" }, { "escada": "core_antirrotacao" }] },
+        { "id": "A3c", "padrao": "core_extensao", "opcoes": [{ "escada": "core_extensao" }] }
+      ]}
+    ]},
+    { "id": "B", "nome": "Treino B", "blocos": [
+      { "tipo": "par", "vagas": [
+        { "id": "B1a", "padrao": "joelho", "opcoes": [{ "exercicio": "leg_press" }, { "exercicio": "bulgaro_halteres" }, { "escada": "joelho" }] },
+        { "id": "B1b", "padrao": "puxar_horizontal", "opcoes": [{ "exercicio": "remada_baixa" }, { "exercicio": "remada_unilateral" }, { "escada": "puxar_horizontal" }] }
+      ]},
+      { "tipo": "par", "vagas": [
+        { "id": "B2a", "padrao": "empurrar_vertical", "opcoes": [{ "exercicio": "desenvolvimento_halteres" }, { "escada": "empurrar_vertical" }] },
+        { "id": "B2b", "padrao": "quadril", "opcoes": [{ "exercicio": "mesa_flexora" }, { "escada": "quadril" }] }
+      ]},
+      { "tipo": "trio", "vagas": [
+        { "id": "B3a", "padrao": "core_antiextensao", "opcoes": [{ "escada": "core_antiextensao" }] },
+        { "id": "B3b", "padrao": "core_antirrotacao", "opcoes": [{ "exercicio": "pallof_cabo" }, { "escada": "core_antirrotacao" }] },
+        { "id": "B3c", "padrao": "core_extensao", "opcoes": [{ "escada": "core_extensao" }] }
+      ]}
+    ]}
+  ],
+  "nomesPadroes": {
+    "joelho": "Pernas (joelho)",
+    "quadril": "Posterior (quadril)",
+    "empurrar_horizontal": "Peito / empurrar",
+    "empurrar_vertical": "Ombros / empurrar",
+    "puxar_vertical": "Costas / puxar vertical",
+    "puxar_horizontal": "Costas / remada",
+    "core_antiextensao": "Core",
+    "core_antirrotacao": "Core",
+    "core_extensao": "Core"
+  }
+}

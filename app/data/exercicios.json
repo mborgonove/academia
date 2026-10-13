@@ -1,0 +1,74 @@
+{
+  "_fonte": "docs/base-cientifica.md › Calistenia: progressões por movimento; Academia de prédio: exercícios por aparelho",
+  "equipamentos": [
+    { "id": "barra_fixa", "nome": "Barra fixa" },
+    { "id": "barra_baixa", "nome": "Barra baixa, mesa firme ou argolas (remada)" },
+    { "id": "paralelas", "nome": "Paralelas ou duas cadeiras firmes" },
+    { "id": "banco", "nome": "Banco" },
+    { "id": "halteres", "nome": "Halteres" },
+    { "id": "elastico", "nome": "Elástico (faixa)" },
+    { "id": "roda_ou_argolas", "nome": "Roda abdominal ou argolas" },
+    { "id": "estacao_supino", "nome": "Estação: supino sentado / peck deck" },
+    { "id": "estacao_puxada", "nome": "Estação: puxada alta (pulley)" },
+    { "id": "estacao_remada", "nome": "Estação: remada baixa" },
+    { "id": "flexora", "nome": "Mesa ou cadeira flexora" },
+    { "id": "leg_press", "nome": "Leg press" },
+    { "id": "polia", "nome": "Polia / cabo" }
+  ],
+  "exercicios": [
+    { "id": "escapula_barra", "nome": "Escápula na barra", "padrao": "puxar_vertical", "modalidade": "calistenia", "equipamento": ["barra_fixa"], "dica": "Pendurado, braços estendidos: desça e aproxime as escápulas sem dobrar os cotovelos." },
+    { "id": "arch_hang", "nome": "Arch hang", "padrao": "puxar_vertical", "modalidade": "calistenia", "equipamento": ["barra_fixa"], "dica": "Pendurado, arqueie o peito em direção à barra mantendo os braços quase estendidos." },
+    { "id": "barra_negativa", "nome": "Negativa de barra", "padrao": "puxar_vertical", "modalidade": "calistenia", "equipamento": ["barra_fixa"], "dica": "Comece com o queixo acima da barra (suba num banco) e desça devagar, 3–5 s." },
+    { "id": "barra", "nome": "Barra fixa", "padrao": "puxar_vertical", "modalidade": "calistenia", "equipamento": ["barra_fixa"], "dica": "Do braço estendido até o queixo passar a barra, sem balançar." },
+    { "id": "barra_peso", "nome": "Barra com peso", "padrao": "puxar_vertical", "modalidade": "calistenia", "equipamento": ["barra_fixa", "halteres"], "dica": "Halter preso entre os pés ou mochila com peso." },
+
+    { "id": "agachamento_assistido", "nome": "Agachamento assistido", "padrao": "joelho", "modalidade": "calistenia", "equipamento": [], "dica": "Segure num batente ou apoio e desça até onde controlar." },
+    { "id": "agachamento", "nome": "Agachamento", "padrao": "joelho", "modalidade": "calistenia", "equipamento": [], "dica": "Pés na largura dos ombros, joelhos na direção dos pés, desça o máximo com a coluna neutra." },
+    { "id": "afundo", "nome": "Afundo (split squat)", "padrao": "joelho", "modalidade": "calistenia", "equipamento": [], "dica": "Uma perna à frente, desça o joelho de trás até perto do chão. Conte as reps por perna." },
+    { "id": "bulgaro", "nome": "Agachamento búlgaro", "padrao": "joelho", "modalidade": "calistenia", "equipamento": ["banco"], "dica": "Pé de trás apoiado no banco. Reps por perna." },
+    { "id": "shrimp_iniciante", "nome": "Shrimp squat iniciante", "padrao": "joelho", "modalidade": "calistenia", "equipamento": [], "dica": "Em uma perna, segure o pé de trás; desça até o joelho de trás tocar um apoio." },
+    { "id": "shrimp_intermediario", "nome": "Shrimp squat intermediário", "padrao": "joelho", "modalidade": "calistenia", "equipamento": [], "dica": "Joelho de trás toca o chão." },
+    { "id": "shrimp_avancado", "nome": "Shrimp squat avançado", "padrao": "joelho", "modalidade": "calistenia", "equipamento": [], "dica": "Segurando o pé de trás com a mão, joelho toca o chão." },
+
+    { "id": "paralela_sustentacao", "nome": "Sustentação nas paralelas", "padrao": "empurrar_vertical", "modalidade": "calistenia", "equipamento": ["paralelas"], "isometrico": true, "dica": "Braços estendidos, ombros para baixo, corpo parado." },
+    { "id": "paralela_negativa", "nome": "Negativa de paralela", "padrao": "empurrar_vertical", "modalidade": "calistenia", "equipamento": ["paralelas"], "dica": "Desça devagar (3–5 s) até os ombros ficarem um pouco abaixo dos cotovelos." },
+    { "id": "paralela", "nome": "Paralela (dip)", "padrao": "empurrar_vertical", "modalidade": "calistenia", "equipamento": ["paralelas"], "dica": "Desça até ombro abaixo do cotovelo e suba até travar." },
+    { "id": "paralela_peso", "nome": "Paralela com peso", "padrao": "empurrar_vertical", "modalidade": "calistenia", "equipamento": ["paralelas", "halteres"], "dica": "Halter entre as pernas ou mochila." },
+
+    { "id": "stiff_corporal", "nome": "Stiff com peso corporal", "padrao": "quadril", "modalidade": "calistenia", "equipamento": [], "dica": "Joelhos levemente dobrados, leve o quadril para trás com a coluna neutra." },
+    { "id": "stiff_unilateral", "nome": "Stiff unilateral", "padrao": "quadril", "modalidade": "calistenia", "equipamento": [], "dica": "Em uma perna, quadril alinhado. Reps por perna." },
+    { "id": "nordica_negativa_elastico", "nome": "Nórdica negativa com elástico", "padrao": "quadril", "modalidade": "calistenia", "equipamento": ["elastico"], "dica": "Pés presos, desça o corpo reto o mais devagar possível, elástico ajudando." },
+    { "id": "nordica_elastico", "nome": "Nórdica com elástico", "padrao": "quadril", "modalidade": "calistenia", "equipamento": ["elastico"], "dica": "Desça e suba com ajuda do elástico." },
+    { "id": "nordica", "nome": "Nórdica", "padrao": "quadril", "modalidade": "calistenia", "equipamento": [], "dica": "Sem ajuda. Pés presos sob um móvel pesado." },
+
+    { "id": "remada_vertical", "nome": "Remada vertical", "padrao": "puxar_horizontal", "modalidade": "calistenia", "equipamento": ["barra_baixa"], "dica": "Corpo quase em pé segurando um apoio; puxe o peito até as mãos." },
+    { "id": "remada_inclinada", "nome": "Remada inclinada", "padrao": "puxar_horizontal", "modalidade": "calistenia", "equipamento": ["barra_baixa"], "dica": "Corpo inclinado ~45°, reto da cabeça aos pés." },
+    { "id": "remada_horizontal", "nome": "Remada horizontal", "padrao": "puxar_horizontal", "modalidade": "calistenia", "equipamento": ["barra_baixa"], "dica": "Corpo paralelo ao chão, peito até a barra." },
+    { "id": "remada_aberta", "nome": "Remada aberta", "padrao": "puxar_horizontal", "modalidade": "calistenia", "equipamento": ["barra_baixa"], "dica": "Pegada bem aberta, cotovelos para fora." },
+    { "id": "remada_peso", "nome": "Remada com peso", "padrao": "puxar_horizontal", "modalidade": "calistenia", "equipamento": ["barra_baixa", "halteres"], "dica": "Mochila com peso ou halter sobre o quadril." },
+
+    { "id": "flexao_parede", "nome": "Flexão na parede", "padrao": "empurrar_horizontal", "modalidade": "calistenia", "equipamento": [], "dica": "Mãos na parede, corpo reto, peito até a parede." },
+    { "id": "flexao_inclinada", "nome": "Flexão inclinada", "padrao": "empurrar_horizontal", "modalidade": "calistenia", "equipamento": [], "dica": "Mãos num apoio elevado; quanto mais baixo, mais difícil." },
+    { "id": "flexao", "nome": "Flexão", "padrao": "empurrar_horizontal", "modalidade": "calistenia", "equipamento": [], "dica": "Corpo reto, cotovelos perto do corpo, peito quase no chão." },
+    { "id": "flexao_diamante", "nome": "Flexão diamante", "padrao": "empurrar_horizontal", "modalidade": "calistenia", "equipamento": [], "dica": "Mãos juntas formando um losango sob o peito." },
+    { "id": "flexao_pseudo_planche", "nome": "Flexão pseudo-planche", "padrao": "empurrar_horizontal", "modalidade": "calistenia", "equipamento": [], "dica": "Mãos na altura da cintura, corpo inclinado à frente dos ombros." },
+
+    { "id": "prancha", "nome": "Prancha", "padrao": "core_antiextensao", "modalidade": "calistenia", "equipamento": [], "isometrico": true, "dica": "Apoio nos antebraços, glúteos contraídos, sem afundar o quadril." },
+    { "id": "rollout", "nome": "Rollout", "padrao": "core_antiextensao", "modalidade": "calistenia", "equipamento": ["roda_ou_argolas"], "dica": "De joelhos, role à frente só até onde a lombar não ceder." },
+    { "id": "pallof_elastico", "nome": "Pallof press com elástico", "padrao": "core_antirrotacao", "modalidade": "calistenia", "equipamento": ["elastico"], "dica": "Elástico preso ao lado; empurre à frente sem deixar o tronco girar. Reps por lado." },
+    { "id": "hiperextensao_reversa", "nome": "Hiperextensão reversa", "padrao": "core_extensao", "modalidade": "calistenia", "equipamento": ["banco"], "dica": "Tronco apoiado no banco, eleve as pernas retas até alinhar com o corpo." },
+
+    { "id": "agachamento_goblet", "nome": "Agachamento goblet", "padrao": "joelho", "modalidade": "halter", "equipamento": ["halteres"], "degrau": 2, "dica": "Halter junto ao peito, desça entre os joelhos." },
+    { "id": "leg_press", "nome": "Leg press", "padrao": "joelho", "modalidade": "aparelho", "equipamento": ["leg_press"], "degrau": 5, "dica": "Desça até onde a lombar continuar colada no encosto." },
+    { "id": "bulgaro_halteres", "nome": "Búlgaro com halteres", "padrao": "joelho", "modalidade": "halter", "equipamento": ["halteres", "banco"], "degrau": 2, "dica": "Reps por perna." },
+    { "id": "puxada_alta", "nome": "Puxada alta no pulley", "padrao": "puxar_vertical", "modalidade": "aparelho", "equipamento": ["estacao_puxada"], "degrau": 5, "dica": "Puxe a barra até a parte de cima do peito, sem jogar o tronco para trás." },
+    { "id": "remada_baixa", "nome": "Remada baixa no cabo", "padrao": "puxar_horizontal", "modalidade": "aparelho", "equipamento": ["estacao_remada"], "degrau": 5, "dica": "Tronco parado, puxe até a barriga e junte as escápulas." },
+    { "id": "remada_unilateral", "nome": "Remada unilateral com halter", "padrao": "puxar_horizontal", "modalidade": "halter", "equipamento": ["halteres", "banco"], "degrau": 2, "dica": "Mão e joelho no banco, puxe o halter até o quadril. Reps por lado." },
+    { "id": "supino_halteres", "nome": "Supino com halteres", "padrao": "empurrar_horizontal", "modalidade": "halter", "equipamento": ["halteres", "banco"], "degrau": 2, "dica": "Desça os halteres até a linha do peito, cotovelos a ~45° do corpo." },
+    { "id": "supino_maquina", "nome": "Supino sentado na estação", "padrao": "empurrar_horizontal", "modalidade": "aparelho", "equipamento": ["estacao_supino"], "degrau": 5, "dica": "Pegada na altura do meio do peito." },
+    { "id": "desenvolvimento_halteres", "nome": "Desenvolvimento com halteres", "padrao": "empurrar_vertical", "modalidade": "halter", "equipamento": ["halteres", "banco"], "degrau": 2, "dica": "Sentado com encosto, empurre acima da cabeça sem arquear a lombar." },
+    { "id": "stiff_halteres", "nome": "Stiff com halteres", "padrao": "quadril", "modalidade": "halter", "equipamento": ["halteres"], "degrau": 2, "dica": "Halteres rente às pernas, quadril para trás, coluna neutra." },
+    { "id": "mesa_flexora", "nome": "Mesa ou cadeira flexora", "padrao": "quadril", "modalidade": "aparelho", "equipamento": ["flexora"], "degrau": 5, "dica": "Movimento completo, sem tirar o quadril do apoio." },
+    { "id": "pallof_cabo", "nome": "Pallof press no cabo", "padrao": "core_antirrotacao", "modalidade": "aparelho", "equipamento": ["polia"], "degrau": 2.5, "dica": "Cabo ao lado na altura do peito; empurre à frente sem girar. Reps por lado." }
+  ]
+}
