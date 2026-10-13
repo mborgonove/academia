@@ -1,0 +1,980 @@
+{
+  "_fonte": "Textos: escritos para iniciantes a partir das dicas de exercicios.json. Fotos: Free Exercise DB (github.com/yuhonas/free-exercise-db, domínio público). Vídeos: YouTube, embutidos via youtube-nocookie e carregados só quando o usuário toca em \"Ver vídeo\".",
+  "_campos": "fotos.quadros = quais fotos alternar (0 = início, 1 = fim); um só quadro = posição parada. fotos.obs explica diferenças entre a foto e a sua versão.",
+  "guias": {
+    "escapula_barra": {
+      "explicacao": "Pendurado na barra, você só puxa os ombros para baixo, sem dobrar os braços. Ensina as costas a \"ligar\" antes da barra.",
+      "musculos": "Costas (parte de cima) e ombros",
+      "passos": [
+        "Segure a barra com as palmas para a frente, mãos na largura dos ombros, e fique pendurado.",
+        "Sem dobrar os cotovelos, empurre os ombros para baixo e para trás: o corpo sobe uns poucos centímetros.",
+        "Volte devagar até ficar pendurado de novo. Isso é 1 repetição."
+      ],
+      "fotos": {
+        "pasta": "img/ex/scapular_pull_up",
+        "quadros": [
+          0,
+          1
+        ]
+      },
+      "video": {
+        "id": "2f97pFlCLQk",
+        "titulo": "Tactical Pull Up (Ativação Escapular) - Lapidando sua barra fixa!",
+        "canal": "BPro Treinamento"
+      }
+    },
+    "arch_hang": {
+      "explicacao": "Pendurado na barra, você arqueia o peito em direção a ela com os braços quase retos. É o passo antes da barra completa.",
+      "musculos": "Costas e ombros",
+      "passos": [
+        "Pendure-se com as palmas para a frente.",
+        "Puxe os ombros para baixo e leve o peito para a frente e para cima, arqueando as costas. Os braços dobram só um pouco.",
+        "Segure 1 segundo e volte devagar."
+      ],
+      "video": {
+        "id": "jwv_PwHNg1w",
+        "titulo": "ARCH HANG",
+        "canal": "Asphodel Fitness, Strength & Conditioning",
+        "idioma": "inglês"
+      }
+    },
+    "barra_negativa": {
+      "explicacao": "Você começa já lá em cima (subindo num banco) e só desce, bem devagar. Treina a força para a barra completa.",
+      "musculos": "Costas e bíceps",
+      "passos": [
+        "Suba num banco ou cadeira firme e segure a barra com o queixo acima dela.",
+        "Tire os pés do apoio e desça o mais devagar que conseguir (3 a 5 segundos) até os braços ficarem retos.",
+        "Volte ao apoio, suba de novo e repita."
+      ],
+      "fotos": {
+        "pasta": "img/ex/pullups",
+        "quadros": [
+          0,
+          1
+        ],
+        "obs": "A foto mostra a barra completa. Na negativa você só faz a descida, devagar."
+      },
+      "video": {
+        "id": "a_pWDinBgC4",
+        "titulo": "BARRA NEGATIVA PRONADA",
+        "canal": "Personal Nutri App"
+      }
+    },
+    "barra": {
+      "explicacao": "Pendurado, você puxa o corpo até o queixo passar a barra. É o exercício clássico de costas sem aparelho.",
+      "musculos": "Costas e bíceps",
+      "passos": [
+        "Segure a barra com as palmas para a frente, um pouco mais abertas que os ombros.",
+        "Puxe os ombros para baixo e suba até o queixo passar a barra, sem balançar as pernas.",
+        "Desça controlando até os braços ficarem retos."
+      ],
+      "fotos": {
+        "pasta": "img/ex/pullups",
+        "quadros": [
+          0,
+          1
+        ]
+      },
+      "video": {
+        "id": "thg6cGXSlvY",
+        "titulo": "Como fazer barra fixa",
+        "canal": "Leandro Twin"
+      }
+    },
+    "barra_peso": {
+      "explicacao": "A mesma barra fixa, com um peso extra preso ao corpo.",
+      "musculos": "Costas e bíceps",
+      "passos": [
+        "Prenda o peso: halter entre os pés ou mochila com peso nas costas.",
+        "Faça a barra normalmente: queixo acima da barra, sem balançar.",
+        "Desça controlando até os braços ficarem retos."
+      ],
+      "fotos": {
+        "pasta": "img/ex/pullups",
+        "quadros": [
+          0,
+          1
+        ],
+        "obs": "Igual à barra fixa, com peso extra preso ao corpo."
+      },
+      "video": {
+        "id": "thg6cGXSlvY",
+        "titulo": "Como fazer barra fixa",
+        "canal": "Leandro Twin"
+      }
+    },
+    "agachamento_assistido": {
+      "explicacao": "Agachamento segurando num apoio (batente de porta, corrimão) para ter equilíbrio e ajuda.",
+      "musculos": "Coxas e glúteos",
+      "passos": [
+        "Fique de frente para um batente ou apoio firme e segure com as duas mãos.",
+        "Pés na largura dos ombros. Leve o quadril para trás e para baixo, como se fosse sentar.",
+        "Desça até onde conseguir controlar e suba usando as mãos só o necessário."
+      ],
+      "fotos": {
+        "pasta": "img/ex/bodyweight_squat",
+        "quadros": [
+          0,
+          1
+        ],
+        "obs": "Mesmo movimento, mas segurando num apoio."
+      },
+      "video": {
+        "id": "D5u5p_Fmrf0",
+        "titulo": "AGACHAMENTO COM APOIO - (Exercício para coxa, pernas e glúteos)",
+        "canal": "Fitclick"
+      }
+    },
+    "agachamento": {
+      "explicacao": "O movimento de sentar e levantar, sem cadeira e sem peso.",
+      "musculos": "Coxas e glúteos",
+      "passos": [
+        "Pés na largura dos ombros, pontas levemente para fora.",
+        "Leve o quadril para trás e para baixo, com os joelhos apontando na direção dos pés e as costas retas.",
+        "Desça o máximo que conseguir com boa postura e suba empurrando o chão."
+      ],
+      "fotos": {
+        "pasta": "img/ex/bodyweight_squat",
+        "quadros": [
+          0,
+          1
+        ]
+      },
+      "video": {
+        "id": "s7i94Okznns",
+        "titulo": "Dicas para aplicar o agachamento correto",
+        "canal": "Rodrigo Zago Treinador"
+      }
+    },
+    "afundo": {
+      "explicacao": "Uma perna à frente e outra atrás; você desce e sobe sem mexer os pés. Trabalha uma perna de cada vez.",
+      "musculos": "Coxas e glúteos",
+      "passos": [
+        "Dê um passo grande à frente e deixe o pé de trás apoiado na ponta.",
+        "Desça reto, dobrando os dois joelhos, até o joelho de trás quase tocar o chão.",
+        "Suba empurrando com a perna da frente. Faça todas as repetições e troque de perna."
+      ],
+      "fotos": {
+        "pasta": "img/ex/bodyweight_walking_lunge",
+        "quadros": [
+          0,
+          1
+        ],
+        "obs": "Na foto a pessoa anda; no afundo os pés ficam parados."
+      },
+      "video": {
+        "id": "TIIreexu5B0",
+        "titulo": "APRENDENDO A FAZER AFUNDO CORRETAMENTE",
+        "canal": "Léo Brasil"
+      }
+    },
+    "bulgaro": {
+      "explicacao": "Como o afundo, mas com o pé de trás apoiado num banco. Mais difícil e mais equilíbrio.",
+      "musculos": "Coxas e glúteos",
+      "passos": [
+        "De costas para um banco, apoie o peito do pé de trás nele.",
+        "Desça reto até a coxa da frente ficar perto da horizontal.",
+        "Suba empurrando com a perna da frente. Faça todas as repetições e troque de perna."
+      ],
+      "fotos": {
+        "pasta": "img/ex/split_squat_with_dumbbells",
+        "quadros": [
+          0,
+          1
+        ],
+        "obs": "Na sua versão, sem halteres."
+      },
+      "video": {
+        "id": "IGf9fR4Y7Iw",
+        "titulo": "Como fazer agachamento búlgaro",
+        "canal": "Leandro Twin"
+      }
+    },
+    "shrimp_iniciante": {
+      "explicacao": "Agachamento em uma perna só, segurando o outro pé atrás do corpo. Nesta versão o joelho de trás desce até um apoio.",
+      "musculos": "Coxas e glúteos",
+      "passos": [
+        "Em pé numa perna, dobre a outra para trás (pode segurar o pé com a mão).",
+        "Desça devagar até o joelho de trás tocar um apoio baixo (almofada ou livro).",
+        "Suba com a perna da frente. Repetições por perna."
+      ],
+      "video": {
+        "id": "xfl7SDj0Gzs",
+        "titulo": "Shrimp Squat | Tutorial & Progressions",
+        "canal": "Flow Motion Fitness ",
+        "idioma": "inglês"
+      }
+    },
+    "shrimp_intermediario": {
+      "explicacao": "O mesmo agachamento em uma perna, agora até o joelho de trás tocar o chão.",
+      "musculos": "Coxas e glúteos",
+      "passos": [
+        "Em pé numa perna, a outra dobrada para trás.",
+        "Desça até o joelho de trás encostar de leve no chão.",
+        "Suba sem pular. Repetições por perna."
+      ],
+      "video": {
+        "id": "xfl7SDj0Gzs",
+        "titulo": "Shrimp Squat | Tutorial & Progressions",
+        "canal": "Flow Motion Fitness ",
+        "idioma": "inglês"
+      }
+    },
+    "shrimp_avancado": {
+      "explicacao": "Agachamento em uma perna segurando o pé de trás com a mão, até o joelho tocar o chão. Nível bem avançado.",
+      "musculos": "Coxas e glúteos",
+      "passos": [
+        "Segure o pé de trás com a mão do mesmo lado.",
+        "Desça até o joelho de trás tocar o chão, sem soltar o pé.",
+        "Suba com a perna da frente. Repetições por perna."
+      ],
+      "video": {
+        "id": "xfl7SDj0Gzs",
+        "titulo": "Shrimp Squat | Tutorial & Progressions",
+        "canal": "Flow Motion Fitness ",
+        "idioma": "inglês"
+      }
+    },
+    "paralela_sustentacao": {
+      "explicacao": "Você sobe nas barras paralelas (ou em duas cadeiras firmes) e fica parado com os braços esticados.",
+      "musculos": "Peito, ombros e tríceps (parte de trás do braço)",
+      "passos": [
+        "Apoie as mãos nas barras e suba até os braços ficarem esticados.",
+        "Ombros para baixo (longe das orelhas), corpo parado.",
+        "Segure o tempo da meta e desça com cuidado."
+      ],
+      "fotos": {
+        "pasta": "img/ex/parallel_bar_dip",
+        "quadros": [
+          1
+        ],
+        "obs": "Fique parado nesta posição de cima."
+      },
+      "video": {
+        "id": "rA9Gv_x4TvE",
+        "titulo": "Paralelas / Dip -  Como fazer? Tutorial e Progressões (Calistenia)",
+        "canal": "Emy Oliveira "
+      }
+    },
+    "paralela_negativa": {
+      "explicacao": "Nas paralelas, você só faz a descida, bem devagar. Prepara para a paralela completa.",
+      "musculos": "Peito, ombros e tríceps",
+      "passos": [
+        "Suba nas barras com os braços esticados.",
+        "Desça bem devagar (3 a 5 segundos) até o ombro ficar um pouco abaixo do cotovelo.",
+        "Apoie os pés para voltar lá em cima e repita."
+      ],
+      "fotos": {
+        "pasta": "img/ex/parallel_bar_dip",
+        "quadros": [
+          1,
+          0
+        ]
+      },
+      "video": {
+        "id": "rA9Gv_x4TvE",
+        "titulo": "Paralelas / Dip -  Como fazer? Tutorial e Progressões (Calistenia)",
+        "canal": "Emy Oliveira "
+      }
+    },
+    "paralela": {
+      "explicacao": "Nas barras paralelas, você desce e sobe o corpo dobrando os braços.",
+      "musculos": "Peito, ombros e tríceps",
+      "passos": [
+        "Comece em cima, braços esticados, corpo levemente inclinado à frente.",
+        "Desça até o ombro ficar um pouco abaixo do cotovelo.",
+        "Suba empurrando até esticar os braços."
+      ],
+      "fotos": {
+        "pasta": "img/ex/parallel_bar_dip",
+        "quadros": [
+          1,
+          0
+        ]
+      },
+      "video": {
+        "id": "LJz40nTE_sI",
+        "titulo": "Como fazer paralelas",
+        "canal": "Leandro Twin"
+      }
+    },
+    "paralela_peso": {
+      "explicacao": "A mesma paralela, com peso extra preso ao corpo.",
+      "musculos": "Peito, ombros e tríceps",
+      "passos": [
+        "Prenda o peso: halter entre as pernas ou mochila.",
+        "Desça até o ombro ficar um pouco abaixo do cotovelo.",
+        "Suba até esticar os braços."
+      ],
+      "fotos": {
+        "pasta": "img/ex/parallel_bar_dip",
+        "quadros": [
+          1,
+          0
+        ],
+        "obs": "Igual à paralela, com peso extra."
+      },
+      "video": {
+        "id": "LJz40nTE_sI",
+        "titulo": "Como fazer paralelas",
+        "canal": "Leandro Twin"
+      }
+    },
+    "stiff_corporal": {
+      "explicacao": "Em pé, você leva o quadril para trás e inclina o tronco, com as costas retas. Ensina o movimento de \"dobradiça\" do quadril.",
+      "musculos": "Parte de trás da coxa e glúteos",
+      "passos": [
+        "Em pé, pés na largura do quadril, joelhos levemente dobrados.",
+        "Empurre o quadril para trás e incline o tronco, mantendo as costas retas, até sentir alongar atrás da coxa.",
+        "Volte empurrando o quadril para a frente."
+      ],
+      "fotos": {
+        "pasta": "img/ex/stiff_legged_dumbbell_deadlift",
+        "quadros": [
+          0,
+          1
+        ],
+        "obs": "Na sua versão, sem halteres."
+      },
+      "video": {
+        "id": "u1E3_u2gJYE",
+        "titulo": "Como fazer stiff",
+        "canal": "Leandro Twin"
+      }
+    },
+    "stiff_unilateral": {
+      "explicacao": "O stiff apoiado em uma perna só: a outra vai para trás enquanto o tronco inclina.",
+      "musculos": "Parte de trás da coxa, glúteos e equilíbrio",
+      "passos": [
+        "Em pé numa perna, joelho levemente dobrado.",
+        "Incline o tronco à frente enquanto a outra perna sobe reta para trás, quadril alinhado.",
+        "Volte devagar. Repetições por perna."
+      ],
+      "fotos": {
+        "pasta": "img/ex/kettlebell_one_legged_deadlift",
+        "quadros": [
+          0,
+          1
+        ],
+        "obs": "Na sua versão, sem peso."
+      },
+      "video": {
+        "id": "kJZGK8dYD_U",
+        "titulo": "Stiff Unilateral com o Peso Corporal",
+        "canal": "TALLES SUCESSO"
+      }
+    },
+    "nordica_negativa_elastico": {
+      "explicacao": "De joelhos, com os pés presos, você deixa o corpo cair para a frente bem devagar, com um elástico ajudando.",
+      "musculos": "Parte de trás da coxa",
+      "passos": [
+        "Ajoelhe numa almofada com os pés presos sob um móvel pesado. Prenda um elástico à frente e passe pelo peito.",
+        "Com o corpo reto dos joelhos à cabeça, desça para a frente o mais devagar possível.",
+        "Apoie as mãos no chão no final e volte com ajuda das mãos."
+      ],
+      "fotos": {
+        "pasta": "img/ex/natural_glute_ham_raise",
+        "quadros": [
+          0,
+          1
+        ],
+        "obs": "Na foto os pés estão presos num aparelho e não há elástico."
+      },
+      "video": {
+        "id": "shYmtAhLVFw",
+        "titulo": "Flexão Nórdica com Elástico Do Iniciante ao Avançado: Use o Elástico com Inteligência.",
+        "canal": "Treino em FOCO"
+      }
+    },
+    "nordica_elastico": {
+      "explicacao": "A nórdica completa, descendo e subindo, com o elástico ajudando.",
+      "musculos": "Parte de trás da coxa",
+      "passos": [
+        "Ajoelhado, pés presos, elástico preso à frente e passando pelo peito.",
+        "Desça devagar com o corpo reto.",
+        "Suba puxando com a parte de trás das coxas, com ajuda do elástico."
+      ],
+      "fotos": {
+        "pasta": "img/ex/natural_glute_ham_raise",
+        "quadros": [
+          0,
+          1
+        ],
+        "obs": "Na foto não há elástico."
+      },
+      "video": {
+        "id": "shYmtAhLVFw",
+        "titulo": "Flexão Nórdica com Elástico Do Iniciante ao Avançado: Use o Elástico com Inteligência.",
+        "canal": "Treino em FOCO"
+      }
+    },
+    "nordica": {
+      "explicacao": "De joelhos com os pés presos, você desce o corpo reto para a frente e volta, sem ajuda. Muito difícil.",
+      "musculos": "Parte de trás da coxa",
+      "passos": [
+        "Ajoelhe com os pés presos sob um móvel pesado.",
+        "Desça devagar com o corpo reto dos joelhos à cabeça.",
+        "Suba usando a parte de trás das coxas."
+      ],
+      "fotos": {
+        "pasta": "img/ex/natural_glute_ham_raise",
+        "quadros": [
+          0,
+          1
+        ],
+        "obs": "Na foto os pés estão presos num aparelho; em casa, use um móvel pesado."
+      },
+      "video": {
+        "id": "Q1uhiTjZDqs",
+        "titulo": "Passo a passo para fazer a Flexão Nórdica",
+        "canal": "Rodrigo Zago Treinador"
+      }
+    },
+    "remada_vertical": {
+      "explicacao": "Quase em pé, segurando um apoio à sua frente, você puxa o peito até as mãos. É a remada mais fácil.",
+      "musculos": "Costas e bíceps",
+      "passos": [
+        "Segure uma barra baixa, mesa firme ou batente, com o corpo quase em pé e inclinado para trás.",
+        "Puxe o peito até as mãos, juntando as escápulas (os ossos das costas).",
+        "Volte devagar até esticar os braços."
+      ],
+      "fotos": {
+        "pasta": "img/ex/suspended_row",
+        "quadros": [
+          0,
+          1
+        ],
+        "obs": "Na foto são argolas. Quanto mais em pé você estiver, mais fácil."
+      },
+      "video": {
+        "id": "UYSAjUGcZLg",
+        "titulo": "COMO FAZER REMADA INVERTIDA - Fisioprev",
+        "canal": "Guilherme Stellbrink I FisioPrev "
+      }
+    },
+    "remada_inclinada": {
+      "explicacao": "A mesma remada, com o corpo inclinado uns 45 graus. Mais difícil que a vertical.",
+      "musculos": "Costas e bíceps",
+      "passos": [
+        "Segure o apoio e incline o corpo para trás uns 45°, reto da cabeça aos pés.",
+        "Puxe o peito até as mãos.",
+        "Volte devagar até esticar os braços."
+      ],
+      "fotos": {
+        "pasta": "img/ex/suspended_row",
+        "quadros": [
+          0,
+          1
+        ],
+        "obs": "Na foto são argolas; uma barra baixa ou mesa firme também serve."
+      },
+      "video": {
+        "id": "UYSAjUGcZLg",
+        "titulo": "COMO FAZER REMADA INVERTIDA - Fisioprev",
+        "canal": "Guilherme Stellbrink I FisioPrev "
+      }
+    },
+    "remada_horizontal": {
+      "explicacao": "Deitado embaixo de uma barra baixa, com o corpo reto, você puxa o peito até ela.",
+      "musculos": "Costas e bíceps",
+      "passos": [
+        "Deite embaixo da barra e segure-a com os braços esticados.",
+        "Com o corpo reto como uma tábua, puxe o peito até a barra.",
+        "Desça devagar até esticar os braços."
+      ],
+      "fotos": {
+        "pasta": "img/ex/inverted_row",
+        "quadros": [
+          0,
+          1
+        ]
+      },
+      "video": {
+        "id": "UYSAjUGcZLg",
+        "titulo": "COMO FAZER REMADA INVERTIDA - Fisioprev",
+        "canal": "Guilherme Stellbrink I FisioPrev "
+      }
+    },
+    "remada_aberta": {
+      "explicacao": "A remada horizontal com as mãos bem afastadas e os cotovelos para fora.",
+      "musculos": "Costas (parte de cima) e ombros",
+      "passos": [
+        "Embaixo da barra, segure bem mais aberto que os ombros.",
+        "Corpo reto, puxe o peito até a barra com os cotovelos para fora.",
+        "Desça devagar."
+      ],
+      "fotos": {
+        "pasta": "img/ex/inverted_row",
+        "quadros": [
+          0,
+          1
+        ],
+        "obs": "Na sua versão, mãos bem mais afastadas."
+      },
+      "video": {
+        "id": "UYSAjUGcZLg",
+        "titulo": "COMO FAZER REMADA INVERTIDA - Fisioprev",
+        "canal": "Guilherme Stellbrink I FisioPrev "
+      }
+    },
+    "remada_peso": {
+      "explicacao": "A remada horizontal com peso extra sobre o quadril ou numa mochila.",
+      "musculos": "Costas e bíceps",
+      "passos": [
+        "Coloque o peso (mochila ou halter apoiado no quadril).",
+        "Corpo reto, puxe o peito até a barra.",
+        "Desça devagar."
+      ],
+      "fotos": {
+        "pasta": "img/ex/inverted_row",
+        "quadros": [
+          0,
+          1
+        ],
+        "obs": "Igual à remada horizontal, com peso extra."
+      },
+      "video": {
+        "id": "UYSAjUGcZLg",
+        "titulo": "COMO FAZER REMADA INVERTIDA - Fisioprev",
+        "canal": "Guilherme Stellbrink I FisioPrev "
+      }
+    },
+    "flexao_parede": {
+      "explicacao": "Flexão de braço em pé, com as mãos na parede. A versão mais fácil.",
+      "musculos": "Peito, ombros e tríceps",
+      "passos": [
+        "De frente para a parede, um passo e meio de distância, mãos na parede na altura do peito.",
+        "Com o corpo reto, dobre os braços até o peito chegar perto da parede.",
+        "Empurre de volta até esticar os braços."
+      ],
+      "fotos": {
+        "pasta": "img/ex/incline_push_up",
+        "quadros": [
+          0,
+          1
+        ],
+        "obs": "Na sua versão, as mãos vão na parede, com você em pé."
+      },
+      "video": {
+        "id": "fE1Qcg_95fs",
+        "titulo": "Flexão de braço: Não aguenta seu peso? (Iniciantes)",
+        "canal": "Emy Oliveira "
+      }
+    },
+    "flexao_inclinada": {
+      "explicacao": "Flexão com as mãos num apoio alto (banco, mesa, degrau). Quanto mais baixo o apoio, mais difícil.",
+      "musculos": "Peito, ombros e tríceps",
+      "passos": [
+        "Mãos na borda do apoio, um pouco mais abertas que os ombros.",
+        "Corpo reto da cabeça aos pés; desça o peito até o apoio.",
+        "Empurre de volta até esticar os braços."
+      ],
+      "fotos": {
+        "pasta": "img/ex/incline_push_up",
+        "quadros": [
+          0,
+          1
+        ]
+      },
+      "video": {
+        "id": "COpDKiH4byU",
+        "titulo": "FLEXÃO DE BRAÇOS INCLINADA - COMO FAZER",
+        "canal": "Miqueias Alves Personal"
+      }
+    },
+    "flexao": {
+      "explicacao": "A flexão de braço clássica, com as mãos no chão.",
+      "musculos": "Peito, ombros e tríceps",
+      "passos": [
+        "Mãos no chão um pouco mais abertas que os ombros, corpo reto como uma tábua.",
+        "Desça com os cotovelos perto do corpo até o peito quase tocar o chão.",
+        "Empurre de volta sem deixar o quadril cair."
+      ],
+      "fotos": {
+        "pasta": "img/ex/pushups",
+        "quadros": [
+          0,
+          1
+        ]
+      },
+      "video": {
+        "id": "dHgoYiCraCw",
+        "titulo": "Como fazer flexão de braço",
+        "canal": "Leandro Twin"
+      }
+    },
+    "flexao_diamante": {
+      "explicacao": "Flexão com as mãos juntas embaixo do peito, formando um losango com os dedos.",
+      "musculos": "Tríceps e peito",
+      "passos": [
+        "Junte as mãos sob o peito, polegares e indicadores se tocando.",
+        "Corpo reto, desça até o peito chegar perto das mãos.",
+        "Empurre de volta."
+      ],
+      "fotos": {
+        "pasta": "img/ex/push_ups_close_triceps_position",
+        "quadros": [
+          0,
+          1
+        ],
+        "obs": "Na diamante, as mãos se tocam formando um losango."
+      },
+      "video": {
+        "id": "YK0T74TlbNQ",
+        "titulo": "Como Fazer FLEXÃO Diamante Corretamente - Treino Para Peitoral",
+        "canal": "Gustavo Fit - Abdômen dos sonhos"
+      }
+    },
+    "flexao_pseudo_planche": {
+      "explicacao": "Flexão com as mãos na altura da cintura e o corpo inclinado à frente. Nível bem avançado.",
+      "musculos": "Ombros, peito e tríceps",
+      "passos": [
+        "Mãos no chão na altura da cintura, dedos virados para fora ou para trás.",
+        "Incline o corpo à frente até os ombros passarem das mãos.",
+        "Faça a flexão mantendo essa inclinação."
+      ],
+      "video": {
+        "id": "RBxgSmpDZW8",
+        "titulo": "APRENDA A FLEXÃO QUE VAI DESBLOQUEAR A SUA SUPER CONSCIÊNCIA CORPORAL! (Planche Lean Push Up)",
+        "canal": "Gabriel Macineli"
+      }
+    },
+    "prancha": {
+      "explicacao": "Você fica parado apoiado nos antebraços e nas pontas dos pés, com o corpo reto.",
+      "musculos": "Abdômen (core)",
+      "passos": [
+        "Apoie os antebraços no chão, cotovelos embaixo dos ombros.",
+        "Estique as pernas e apoie nas pontas dos pés: corpo reto da cabeça aos calcanhares.",
+        "Contraia glúteos e barriga e segure, sem deixar o quadril cair nem subir."
+      ],
+      "fotos": {
+        "pasta": "img/ex/plank",
+        "quadros": [
+          1
+        ]
+      },
+      "video": {
+        "id": "qNRqGqESAWU",
+        "titulo": "Como fazer abdominal prancha",
+        "canal": "Leandro Twin"
+      }
+    },
+    "rollout": {
+      "explicacao": "De joelhos, segurando uma roda (ou argolas), você rola os braços para a frente e volta. Abdômen forte.",
+      "musculos": "Abdômen (core)",
+      "passos": [
+        "Ajoelhe e segure a roda no chão, embaixo dos ombros.",
+        "Role para a frente devagar, mantendo a barriga firme, só até onde a lombar não afundar.",
+        "Volte puxando com o abdômen."
+      ],
+      "fotos": {
+        "pasta": "img/ex/ab_roller",
+        "quadros": [
+          0,
+          1
+        ]
+      },
+      "video": {
+        "id": "vRi105QOGKU",
+        "titulo": "ABDOMINAL RODINHA - 3 DICAS PARA FAZER CERTO",
+        "canal": "Fit Nerdz"
+      }
+    },
+    "pallof_elastico": {
+      "explicacao": "Com um elástico preso ao seu lado, você empurra as mãos para a frente sem deixar o tronco girar.",
+      "musculos": "Abdômen (core)",
+      "passos": [
+        "Prenda o elástico ao lado, na altura do peito, e fique de lado para ele.",
+        "Segure com as duas mãos junto ao peito e empurre os braços à frente.",
+        "O elástico tenta girar seu tronco: não deixe. Volte e repita. Depois, troque de lado."
+      ],
+      "fotos": {
+        "pasta": "img/ex/pallof_press",
+        "quadros": [
+          0,
+          1
+        ],
+        "obs": "Na foto é um cabo; o elástico funciona do mesmo jeito."
+      },
+      "video": {
+        "id": "GC0NIcCGRvw",
+        "titulo": "PALLOF PRESS COM ELÁSTICO",
+        "canal": "Rodrigo Peralta"
+      }
+    },
+    "hiperextensao_reversa": {
+      "explicacao": "Deitado de bruços no banco, com o quadril na ponta, você levanta as pernas retas até alinhar com o corpo.",
+      "musculos": "Lombar, glúteos e parte de trás da coxa",
+      "passos": [
+        "Deite de bruços no banco com o quadril na ponta e as pernas para fora, pés no chão.",
+        "Segure no banco e levante as pernas retas até ficarem alinhadas com o tronco.",
+        "Desça devagar."
+      ],
+      "fotos": {
+        "pasta": "img/ex/reverse_hyperextension",
+        "quadros": [
+          0,
+          1
+        ],
+        "obs": "Na foto é um aparelho; você faz deitado de bruços num banco."
+      },
+      "video": {
+        "id": "22KpY99sKDE",
+        "titulo": "Hiperextensão Reversa no BANCO! Faça em qualquer lugar",
+        "canal": "Gabriel Martins Fitness"
+      }
+    },
+    "agachamento_goblet": {
+      "explicacao": "Agachamento segurando um halter em pé, junto ao peito, como uma taça (\"goblet\" é taça em inglês).",
+      "musculos": "Coxas e glúteos",
+      "passos": [
+        "Segure um halter em pé, junto ao peito, com as duas mãos.",
+        "Pés na largura dos ombros. Desça com o quadril entre os joelhos e o tronco o mais reto possível.",
+        "Suba empurrando o chão."
+      ],
+      "fotos": {
+        "pasta": "img/ex/goblet_squat",
+        "quadros": [
+          0,
+          1
+        ]
+      },
+      "video": {
+        "id": "ge1vdJRP0UA",
+        "titulo": "COMO FAZER AGACHAMENTO GOBLET (Agachamento frontal) - Fisioprev",
+        "canal": "Guilherme Stellbrink I FisioPrev "
+      }
+    },
+    "leg_press": {
+      "explicacao": "Aparelho em que você, sentado, empurra uma plataforma com os pés.",
+      "musculos": "Coxas e glúteos",
+      "passos": [
+        "Sente com as costas e o quadril bem colados no encosto, pés na plataforma na largura dos ombros.",
+        "Destrave e desça a plataforma dobrando os joelhos, até onde a lombar continuar colada.",
+        "Empurre de volta sem travar os joelhos no final."
+      ],
+      "fotos": {
+        "pasta": "img/ex/leg_press",
+        "quadros": [
+          0,
+          1
+        ]
+      },
+      "video": {
+        "id": "nY8UsiAqwds",
+        "titulo": "Como fazer leg press",
+        "canal": "Leandro Twin"
+      }
+    },
+    "bulgaro_halteres": {
+      "explicacao": "O agachamento búlgaro (pé de trás no banco) segurando um halter em cada mão.",
+      "musculos": "Coxas e glúteos",
+      "passos": [
+        "De costas para o banco, apoie o pé de trás nele e segure um halter em cada mão.",
+        "Desça reto até a coxa da frente ficar perto da horizontal.",
+        "Suba com a perna da frente. Faça todas as repetições e troque de perna."
+      ],
+      "fotos": {
+        "pasta": "img/ex/split_squat_with_dumbbells",
+        "quadros": [
+          0,
+          1
+        ]
+      },
+      "video": {
+        "id": "IGf9fR4Y7Iw",
+        "titulo": "Como fazer agachamento búlgaro",
+        "canal": "Leandro Twin"
+      }
+    },
+    "puxada_alta": {
+      "explicacao": "Aparelho em que, sentado, você puxa uma barra que vem de cima até o peito.",
+      "musculos": "Costas e bíceps",
+      "passos": [
+        "Ajuste o apoio das coxas e sente. Segure a barra mais aberta que os ombros.",
+        "Puxe a barra até a parte de cima do peito, levando os cotovelos para baixo.",
+        "Volte devagar até esticar os braços, sem jogar o tronco para trás."
+      ],
+      "fotos": {
+        "pasta": "img/ex/wide_grip_lat_pulldown",
+        "quadros": [
+          0,
+          1
+        ]
+      },
+      "video": {
+        "id": "Hu3TbPgEGDo",
+        "titulo": "Como Fazer o Pulley Frente (Aprenda em 1 Minuto)",
+        "canal": "Laércio Refundini - Aulas"
+      }
+    },
+    "remada_baixa": {
+      "explicacao": "Aparelho em que, sentado, você puxa um cabo em direção à barriga.",
+      "musculos": "Costas e bíceps",
+      "passos": [
+        "Sente com os pés apoiados e os joelhos levemente dobrados, segurando o puxador.",
+        "Com o tronco parado, puxe até a barriga e junte as escápulas.",
+        "Volte devagar até esticar os braços."
+      ],
+      "fotos": {
+        "pasta": "img/ex/seated_cable_rows",
+        "quadros": [
+          0,
+          1
+        ]
+      },
+      "video": {
+        "id": "f8AVh4VBbos",
+        "titulo": "Como Fazer a REMADA BAIXA (Aprenda em 1 Minuto)",
+        "canal": "Laércio Refundini - Aulas"
+      }
+    },
+    "remada_unilateral": {
+      "explicacao": "Com uma mão e um joelho apoiados no banco, você puxa um halter com a outra mão. Também chamada de \"serrote\".",
+      "musculos": "Costas e bíceps",
+      "passos": [
+        "Apoie a mão e o joelho do mesmo lado no banco; costas retas.",
+        "Com a outra mão, puxe o halter até o quadril.",
+        "Desça devagar. Faça todas as repetições e troque de lado."
+      ],
+      "fotos": {
+        "pasta": "img/ex/one_arm_dumbbell_row",
+        "quadros": [
+          0,
+          1
+        ]
+      },
+      "video": {
+        "id": "E008-XIJBEk",
+        "titulo": "Como Fazer a REMADA UNILATERAL (Aprenda em 1 Minuto)",
+        "canal": "Laércio Refundini - Aulas"
+      }
+    },
+    "supino_halteres": {
+      "explicacao": "Deitado de costas no banco, você empurra dois halteres para cima.",
+      "musculos": "Peito, ombros e tríceps",
+      "passos": [
+        "Deite no banco com um halter em cada mão, na altura do peito, pés firmes no chão.",
+        "Empurre os halteres para cima até esticar os braços.",
+        "Desça devagar até a linha do peito, cotovelos a uns 45° do corpo."
+      ],
+      "fotos": {
+        "pasta": "img/ex/dumbbell_bench_press",
+        "quadros": [
+          0,
+          1
+        ]
+      },
+      "video": {
+        "id": "Cjh2fIMQHk0",
+        "titulo": "Como Fazer o Supino Reto Com Halteres (Aprenda em 1 Minuto)",
+        "canal": "Laércio Refundini - Aulas"
+      }
+    },
+    "supino_maquina": {
+      "explicacao": "Aparelho em que, sentado, você empurra as alças para a frente.",
+      "musculos": "Peito, ombros e tríceps",
+      "passos": [
+        "Ajuste o banco para que as alças fiquem na altura do meio do peito.",
+        "Costas no encosto, empurre as alças à frente até quase esticar os braços.",
+        "Volte devagar."
+      ],
+      "fotos": {
+        "pasta": "img/ex/machine_bench_press",
+        "quadros": [
+          0,
+          1
+        ]
+      },
+      "video": {
+        "id": "bKSvckCwvh4",
+        "titulo": "Como Fazer o Supino Máquina (Aprenda em 2 Minutos)",
+        "canal": "Laércio Refundini - Aulas"
+      }
+    },
+    "desenvolvimento_halteres": {
+      "explicacao": "Sentado num banco com encosto, você empurra dois halteres para cima da cabeça.",
+      "musculos": "Ombros e tríceps",
+      "passos": [
+        "Sente com as costas apoiadas e um halter em cada mão, na altura dos ombros.",
+        "Empurre os halteres para cima até quase esticar os braços.",
+        "Desça devagar até a altura das orelhas, sem arquear a lombar."
+      ],
+      "fotos": {
+        "pasta": "img/ex/seated_dumbbell_press",
+        "quadros": [
+          0,
+          1
+        ]
+      },
+      "video": {
+        "id": "eufDL9MmF8A",
+        "titulo": "Como fazer o Desenvolvimento com Halteres (Aprenda em 1 Minuto)",
+        "canal": "Laércio Refundini - Aulas"
+      }
+    },
+    "stiff_halteres": {
+      "explicacao": "Em pé com um halter em cada mão, você leva o quadril para trás e desce os halteres rente às pernas, com as costas retas.",
+      "musculos": "Parte de trás da coxa e glúteos",
+      "passos": [
+        "Em pé, halteres à frente das coxas, joelhos levemente dobrados.",
+        "Empurre o quadril para trás e desça os halteres rente às pernas, costas retas.",
+        "Volte empurrando o quadril para a frente."
+      ],
+      "fotos": {
+        "pasta": "img/ex/stiff_legged_dumbbell_deadlift",
+        "quadros": [
+          0,
+          1
+        ]
+      },
+      "video": {
+        "id": "b5f-gnHBRvY",
+        "titulo": "Como Fazer o Stiff ( APRENDA EM 1 MINUTO)",
+        "canal": "Laércio Refundini - Aulas"
+      }
+    },
+    "mesa_flexora": {
+      "explicacao": "Aparelho em que, deitado de bruços (mesa) ou sentado (cadeira), você dobra os joelhos contra uma almofada.",
+      "musculos": "Parte de trás da coxa",
+      "passos": [
+        "Ajuste o aparelho: a almofada fica logo acima do calcanhar.",
+        "Dobre os joelhos trazendo os calcanhares em direção aos glúteos.",
+        "Volte devagar, sem tirar o quadril do apoio."
+      ],
+      "fotos": {
+        "pasta": "img/ex/lying_leg_curls",
+        "quadros": [
+          0,
+          1
+        ]
+      },
+      "video": {
+        "id": "2-ULaRrQa7c",
+        "titulo": "Como fazer mesa flexora",
+        "canal": "Leandro Twin"
+      }
+    },
+    "pallof_cabo": {
+      "explicacao": "No cabo do aparelho, preso ao seu lado, você empurra as mãos para a frente sem deixar o tronco girar.",
+      "musculos": "Abdômen (core)",
+      "passos": [
+        "Coloque a polia na altura do peito e fique de lado para ela, segurando o puxador junto ao peito.",
+        "Empurre os braços à frente.",
+        "O cabo tenta girar seu tronco: não deixe. Volte e repita. Depois, troque de lado."
+      ],
+      "fotos": {
+        "pasta": "img/ex/pallof_press",
+        "quadros": [
+          0,
+          1
+        ]
+      },
+      "video": {
+        "id": "Wez6pSiwfJg",
+        "titulo": "Pallof Press na Polia",
+        "canal": "CT Powerfit"
+      }
+    }
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    { "name": "academia", "runtimeExecutable": "npx", "runtimeArgs": ["--yes", "serve", "app", "-l", "8000"], "port": 8000 }
+  ]
+}

@@ -24,6 +24,8 @@ app/                  ← raiz publicada (é isso que vai para o iPhone)
   data/exercicios.json   biblioteca de exercícios
   data/escadas.json      escadas de progressão de calistenia
   data/treinos.json      treinos A e B (blocos em par/trio, opções por equipamento)
+  data/guias.json        para iniciantes: explicação, passo a passo, músculos, fotos e vídeo de cada exercício
+  img/ex/                fotos início/fim dos exercícios (Free Exercise DB, domínio público)
   sw.js, manifest.webmanifest, icons/
 docs/base-cientifica.md
 tests/                testes com node:test
@@ -33,7 +35,8 @@ tests/                testes com node:test
 
 - Sem build, sem frameworks: HTML + CSS + JavaScript (módulos ES). Tudo precisa funcionar abrindo `app/` num servidor estático.
 - Textos da interface e comentários em português do Brasil.
-- Dados do usuário só no aparelho (`localStorage`, chave `academia.v1`). Sem servidor, sem analytics, sem chamadas externas.
+- Dados do usuário só no aparelho (`localStorage`, chave `academia.v1`). Sem servidor, sem analytics, sem chamadas externas. Única exceção: o vídeo do YouTube (youtube-nocookie) embutido na ficha do exercício, que só carrega quando o Marcus toca em "Ver vídeo".
+- O Marcus é iniciante: todo exercício novo precisa de guia em `data/guias.json` (texto simples, sem jargão) e, se possível, foto. Foto nova vai em `app/img/ex/` e na lista do `sw.js` (os testes conferem).
 - Toda regra nova em `js/progressao.js` ganha teste em `tests/`.
 - Ao alterar arquivos em `app/`, incremente `VERSAO` em `app/sw.js` para o iPhone baixar a versão nova.
 - Mudança no formato do estado salvo → escreva migração em `armazenamento.js` (nunca apague o histórico do usuário).
@@ -47,7 +50,9 @@ tests/                testes com node:test
 ## Próximos passos sugeridos (backlog)
 
 - [ ] Marcus listar os aparelhos reais da academia do prédio e ajustar `data/exercicios.json`
-- [ ] Links de vídeo de técnica em cada exercício
+- [x] Fotos, passo a passo e vídeo embutido em cada exercício (ficha "Como fazer") + glossário para iniciantes
+- [ ] Marcus revisar os vídeos escolhidos e apontar os que não ajudarem
+- [ ] Fotos para arch hang, shrimp squat e flexão pseudo-planche (não há foto livre no acervo)
 - [ ] Gráfico de evolução por padrão no Histórico
 - [ ] Tela de aquecimento guiado (seção "Segurança e aquecimento")
 - [ ] Fase 3 do programa: sugerir série extra quando a progressão travar

@@ -8,6 +8,7 @@ App pessoal de treino — calistenia + academia de prédio — com regras tirada
 - **Em treino:** uma série por vez, na ordem de pares/trios; registra reps (ou segundos, com cronômetro), carga e RIR; descanso de 90 s com aviso; desfazer; encerrar a qualquer momento.
 - **Progressão automática:** escadas de calistenia (3×5 → 3×8 → próximo nível), dupla progressão nos aparelhos, redução de série após falhas seguidas, aviso quando trava.
 - **Histórico, Biblioteca** (ajuste de nível das escadas) e **Ajustes** (equipamento do prédio, data de início, backup em JSON).
+- **Para iniciantes:** cada exercício tem ficha "Como fazer" com fotos animadas (funcionam offline), explicação em linguagem simples, passo a passo e vídeo em português que toca dentro do app (precisa de internet). Na tela Hoje há um glossário (série, repetição, reps em reserva, par, carga).
 
 ## 1. Abrir no Claude Code (no Mac)
 

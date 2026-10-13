@@ -7,7 +7,9 @@ import { carregar, salvar, exportarBackup, importarBackup, estadoInicial } from 
 
 const tela = document.getElementById('tela');
 const camadaTreino = document.getElementById('treino');
+const camadaFicha = document.getElementById('ficha');
 let dados;
+let guias = {}; // data/guias.json: explicação, passo a passo, fotos e vídeo de cada exercício
 let estado = carregar();
 let aba = 'hoje';
 let intervaloRelogio = null;
@@ -19,11 +21,17 @@ const nomeEx = (id) => dados.exercicios.get(id)?.nome ?? id;
 const guardar = () => salvar(estado);
 
 async function iniciar() {
-  const [exercicios, escadas, treinos] = await Promise.all(
-    ['exercicios', 'escadas', 'treinos'].map((n) => fetch(`data/${n}.json`).then((r) => r.json())),
+  const [exercicios, escadas, treinos, guiasBrutos] = await Promise.all(
+    ['exercicios', 'escadas', 'treinos', 'guias'].map((n) => fetch(`data/${n}.json`).then((r) => r.json())),
   );
   dados = indexar({ exercicios, escadas, treinos });
+  guias = guiasBrutos.guias;
   document.querySelectorAll('.abas button').forEach((b) => b.addEventListener('click', () => irPara(b.dataset.aba)));
+  // Qualquer elemento com data-ficha abre a ficha do exercício (fotos, passo a passo e vídeo).
+  document.addEventListener('click', (e) => {
+    const alvo = e.target.closest('[data-ficha]');
+    if (alvo) abrirFicha(alvo.dataset.ficha);
+  });
   irPara('hoje');
   if (estado.treinoEmAndamento) abrirTreino();
   if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js').catch(() => {});
@@ -36,7 +44,100 @@ function irPara(nova) {
   window.scrollTo(0, 0);
 }
 
+/* ---------- Fotos, vídeo e ficha do exercício ---------- */
+
+const guia = (id) => guias[id] || {};
+
+// Fotos de início e fim do movimento se alternando, como um GIF. Um quadro só = posição parada.
+function fotosHTML(id, classe = '') {
+  const f = guia(id).fotos;
+  if (!f) return `<div class="fotos sem-foto ${classe}"><span>Sem foto deste exercício.<br>Veja o vídeo.</span></div>`;
+  return `<figure class="fotos ${f.quadros.length > 1 ? 'anima' : ''} ${classe}">
+    ${f.quadros.map((q) => `<img src="${esc(f.pasta)}-${q}.jpg" alt="">`).join('')}
+  </figure>`;
+}
+
+function miniatura(id) {
+  const f = guia(id).fotos;
+  return f ? `<img class="mini" src="${esc(f.pasta)}-${f.quadros[0]}.jpg" alt="">` : '<span class="mini mini-vazia" aria-hidden="true">?</span>';
+}
+
+function videoHTML(id) {
+  const v = guia(id).video;
+  if (!v) return '';
+  return `<div class="video" data-video="${esc(v.id)}">
+    <button class="botao" data-ver-video>▶ Ver vídeo${v.idioma ? ` (em ${esc(v.idioma)})` : ''}</button>
+    <p class="ajuda">${esc(v.titulo)} · ${esc(v.canal)}</p>
+  </div>`;
+}
+
+// O vídeo só é carregado quando a pessoa toca: até lá, nenhuma chamada ao YouTube.
+function ligarVideos(raiz) {
+  raiz.querySelectorAll('[data-ver-video]').forEach((b) => b.addEventListener('click', () => {
+    const caixa = b.closest('.video');
+    const legenda = caixa.querySelector('.ajuda');
+    if (!navigator.onLine) {
+      legenda.textContent = 'Sem internet agora. As fotos e o passo a passo funcionam mesmo offline.';
+      return;
+    }
+    caixa.innerHTML = `<div class="quadro-video"><iframe
+      src="https://www.youtube-nocookie.com/embed/${encodeURIComponent(caixa.dataset.video)}?autoplay=1&playsinline=1&rel=0"
+      title="Vídeo do exercício" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen
+      referrerpolicy="strict-origin-when-cross-origin"></iframe></div>${legenda.outerHTML}`;
+  }));
+}
+
+function abrirFicha(id) {
+  const ex = dados.exercicios.get(id);
+  const g = guia(id);
+  const equip = (ex.equipamento || []).map((e) => dados.equipamentos.find((x) => x.id === e)?.nome ?? e);
+  camadaFicha.innerHTML = `<div>
+    <div class="topo-treino">
+      <span class="suave">Como fazer</span>
+      <button class="botao secundario pequeno" id="fechar-ficha">Fechar</button>
+    </div>
+    <h1>${esc(ex.nome)}</h1>
+    ${g.explicacao ? `<p class="explicacao">${esc(g.explicacao)}</p>` : ''}
+    ${fotosHTML(id)}
+    ${g.fotos?.obs ? `<p class="ajuda">${esc(g.fotos.obs)}</p>` : ''}
+    ${videoHTML(id)}
+    ${g.passos ? `<h2>Passo a passo</h2><ol class="passos">${g.passos.map((p) => `<li>${esc(p)}</li>`).join('')}</ol>` : ''}
+    ${ex.dica ? `<div class="ponto"><strong>Ponto principal</strong><br>${esc(ex.dica)}</div>` : ''}
+    <div class="cartao fatos">
+      ${g.musculos ? `<div><span class="suave">Trabalha</span><br>${esc(g.musculos)}</div>` : ''}
+      <div><span class="suave">Precisa de</span><br>${equip.length ? esc(equip.join(', ')) : 'Nada, só o corpo'}</div>
+    </div>
+  </div>`;
+  camadaFicha.hidden = false;
+  camadaFicha.scrollTop = 0;
+  document.body.style.overflow = 'hidden';
+  document.getElementById('fechar-ficha').addEventListener('click', fecharFicha);
+  ligarVideos(camadaFicha);
+}
+
+function fecharFicha() {
+  camadaFicha.hidden = true;
+  camadaFicha.innerHTML = ''; // para o vídeo, se estiver tocando
+  if (camadaTreino.hidden) document.body.style.overflow = '';
+}
+
 /* ---------- Hoje ---------- */
+
+// Glossário para quem nunca treinou. Os números vêm da fase atual e de base-cientifica.md › Programa iniciante.
+function glossarioHTML(fase, aberto) {
+  return `<details class="cartao glossario" ${aberto ? 'open' : ''}>
+    <summary><strong>Primeira vez? Entenda o treino</strong></summary>
+    <dl>
+      <dt>Repetição</dt><dd>Fazer o movimento uma vez, ida e volta.</dd>
+      <dt>Série</dt><dd>Um bloco de repetições seguidas, sem parar. “${fase.series} × 8–12” = ${fase.series} séries de 8 a 12 repetições.</dd>
+      <dt>Reps em reserva</dt><dd>Quantas repetições você ainda conseguiria fazer quando parou. Nesta fase: pare quando sentir que ainda faria mais ${esc(fase.rir)} com boa postura. Não é para ir até não aguentar.</dd>
+      <dt>Par</dt><dd>Dois exercícios intercalados: uma série do primeiro, 90 s de descanso, uma série do segundo, 90 s, e repete. O app guia a ordem.</dd>
+      <dt>Carga</dt><dd>O peso, em kg, do halter ou do aparelho. No primeiro treino, comece leve: escolha um peso com que você termine as repetições ainda com folga. O app sobe o peso sozinho depois.</dd>
+      <dt>Nível</dt><dd>Nos exercícios sem peso, em vez de aumentar a carga o app troca por uma versão mais difícil quando você estiver pronto.</dd>
+    </dl>
+    <p class="ajuda">Toque em qualquer exercício para ver fotos, passo a passo e vídeo.</p>
+  </details>`;
+}
 
 function descreverMeta(v) {
   const unidade = v.isometrico ? ' s' : '';
@@ -61,19 +162,26 @@ function telaHoje() {
     <p><span class="selo">Semana ${f.semana} · ${esc(f.nome)}</span> <span class="suave">${f.series} séries · pare com ${esc(f.rir)} rep(s) em reserva</span></p>
     ${ultimo ? `<p class="suave">Último treino: ${esc(ultimo.treino)} em ${formatarData(ultimo.data)}</p>` : ''}
 
+    ${glossarioHTML(f, !estado.historico.length)}
+
     ${plano.blocos.map((b, i) => `
       <div class="bloco-rotulo">${i + 1}. ${b.tipo === 'par' ? 'Par' : 'Trio de core'} · alterne com 90 s de descanso</div>
       <div class="cartao">
         ${b.vagas.map((v) => `
-          <div class="linha-ex">
-            <div>
-              <div class="nome">${esc(nomeEx(v.exercicioId))}</div>
-              <div class="suave" style="font-size:14px">${v.tipo === 'escada' ? `Nível ${v.nivel + 1} de ${v.totalNiveis}` : v.carga == null ? 'Defina a carga no 1º treino' : 'Dupla progressão'}</div>
-              ${v.faltaEquipamento ? '<div class="aviso">Falta equipamento — marque em Ajustes ou improvise.</div>' : ''}
-              ${v.sugestao ? `<div class="aviso">${esc(v.sugestao)}</div>` : ''}
-            </div>
+          <div class="linha-ex com-mini">
+            <button class="abre-ficha" data-ficha="${esc(v.exercicioId)}" aria-label="Como fazer: ${esc(nomeEx(v.exercicioId))}">
+              ${miniatura(v.exercicioId)}
+              <span>
+                <span class="nome">${esc(nomeEx(v.exercicioId))}</span>
+                <span class="sub">${esc(guia(v.exercicioId).musculos ?? '')}</span>
+                <span class="sub">${v.tipo === 'escada' ? `Nível ${v.nivel + 1} de ${v.totalNiveis}` : v.carga == null ? '1º treino: comece com peso leve' : `Sobe o peso ao fazer ${v.faixa.max} em todas as séries`}</span>
+                <span class="ver">Ver como fazer ›</span>
+              </span>
+            </button>
             <div class="meta">${descreverMeta(v)}</div>
-          </div>`).join('')}
+          </div>
+          ${v.faltaEquipamento ? '<div class="aviso">Falta equipamento — marque em Ajustes ou improvise.</div>' : ''}
+          ${v.sugestao ? `<div class="aviso">${esc(v.sugestao)}</div>` : ''}`).join('')}
       </div>`).join('')}
 
     <button class="botao" id="comecar">Começar ${esc(plano.nome)}</button>
@@ -151,16 +259,22 @@ function desenharSerie() {
     ? `Meta: <strong>${v.alvo}${v.isometrico ? ' s' : ' reps'}</strong> · sobe de nível em ${v.series}×${v.faixa.max}${v.isometrico ? ' s' : ''}`
     : `Faixa <strong>${v.faixa.min}–${v.faixa.max} reps</strong>${v.carga != null ? ` · ${v.carga} kg` : ''}`;
 
+  // Aviso de carga inicial: base-cientifica.md › Segurança e aquecimento (1–2 séries leves antes do primeiro exercício com carga).
   camadaTreino.innerHTML = `<div>
     <div class="topo-treino">
       <span class="suave">Treino ${esc(t.treino)} · passo ${t.passo + 1} de ${t.passos.length}</span>
       <button class="botao secundario pequeno" id="sair">Encerrar</button>
     </div>
     <div class="progresso"><span style="width:${pct}%"></span></div>
+    ${fotosHTML(ex.id, 'compacta')}
     <p class="suave">Série ${p.serie} de ${p.total}</p>
     <div class="ex-nome">${esc(ex.nome)}</div>
     <p class="meta-grande">${metaTxt}</p>
-    ${ex.dica ? `<details><summary>Como fazer</summary><p style="margin-top:8px">${esc(ex.dica)}</p></details>` : ''}
+    ${ex.dica ? `<p class="dica">${esc(ex.dica)}</p>` : ''}
+    <button class="botao secundario" data-ficha="${esc(ex.id)}">Como fazer · passo a passo e vídeo</button>
+    ${v.tipo === 'carga' && v.carga == null && p.serie === 1
+      ? '<div class="aviso">Primeiro treino com este exercício: comece com um peso leve e faça 1–2 séries de teste antes. Anote o peso usado; o app ajusta depois.</div>'
+      : ''}
 
     ${v.isometrico ? stepper('segundos', 'Segundos sustentados', val.segundos) + `
       <button class="botao secundario" id="crono">${cronometro ? 'Parar cronômetro' : 'Cronometrar'}</button>`
@@ -172,7 +286,7 @@ function desenharSerie() {
       <div class="chips" id="rir">
         ${[0, 1, 2, 3, 4].map((n) => `<button data-v="${n}" aria-pressed="${n === val.rir}">${n === 4 ? '4+' : n}</button>`).join('')}
       </div>
-      <p class="ajuda">Quantas mais você conseguiria fazer com boa técnica. Meta desta fase: ${esc(t.fase.rir)}. 0 = falha.</p>
+      <p class="ajuda">Quantas repetições a mais você ainda conseguiria fazer com boa postura? 0 = não conseguia mais nenhuma. Meta desta fase: ${esc(t.fase.rir)}.</p>
     </div>
 
     <button class="botao" id="feito">Concluir série</button>
@@ -250,8 +364,10 @@ function desenharDescanso() {
       <button class="botao pequeno" id="pular">Pular</button>
     </div>
     <p class="suave">A seguir</p>
+    ${fotosHTML(v.exercicioId, 'compacta')}
     <p class="ex-nome" style="font-size:22px">${esc(nomeEx(v.exercicioId))}</p>
     <p class="suave">Série ${prox.serie} de ${prox.total} · ${descreverMeta(v)}</p>
+    <button class="botao secundario" data-ficha="${esc(v.exercicioId)}">Como fazer · passo a passo e vídeo</button>
   </div>`;
   const relogio = document.getElementById('relogio');
   const tique = () => {
@@ -343,19 +459,24 @@ function telaHistorico() {
 
 function telaBiblioteca() {
   tela.innerHTML = `<h1>Biblioteca</h1>
-    <p class="suave">Escadas de calistenia: ajuste o nível se o sugerido estiver fácil ou difícil demais. Escolha o nível em que você faz 3×5 com boa técnica.</p>
+    <p class="suave">Toque em qualquer exercício para ver fotos, passo a passo e vídeo.</p>
+    <h2>Exercícios sem peso (calistenia)</h2>
+    <p class="suave">Cada lista vai do mais fácil ao mais difícil. Se o nível sugerido estiver fácil ou difícil demais, ajuste: escolha o nível em que você faz 3×5 com boa técnica.</p>
     ${[...dados.escadas.values()].map((e) => {
       const est = estadoEscada(estado, e);
       return `<div class="cartao"><strong>${esc(e.nome)}</strong>
-        <ol class="niveis">${e.niveis.map((id, i) => `<li class="${i === est.nivel ? 'atual' : ''}">${esc(nomeEx(id))}</li>`).join('')}</ol>
+        <ol class="niveis">${e.niveis.map((id, i) => `<li class="${i === est.nivel ? 'atual' : ''}">
+          <button class="abre-ficha" data-ficha="${esc(id)}">${miniatura(id)}<span>${esc(nomeEx(id))}${i === est.nivel ? ' <span class="selo">seu nível</span>' : ''}</span></button></li>`).join('')}</ol>
         <div class="linha-acoes">
           <button class="botao secundario pequeno" data-escada="${e.id}" data-d="-1" ${est.nivel === 0 ? 'disabled' : ''}>Nível mais fácil</button>
           <button class="botao secundario pequeno" data-escada="${e.id}" data-d="1" ${est.nivel === e.niveis.length - 1 ? 'disabled' : ''}>Mais difícil</button>
         </div></div>`;
     }).join('')}
-    <h2>Exercícios com carga</h2>
+    <h2>Exercícios com peso (halteres e aparelhos)</h2>
     <div class="cartao">${[...dados.exercicios.values()].filter((x) => x.modalidade !== 'calistenia').map((x) => `
-      <div class="linha-ex"><span>${esc(x.nome)}</span><span class="meta">${estado.cargas[x.id]?.carga != null ? `${estado.cargas[x.id].carga} kg` : '—'}</span></div>`).join('')}
+      <div class="linha-ex com-mini"><button class="abre-ficha" data-ficha="${esc(x.id)}">${miniatura(x.id)}<span>
+        <span class="nome">${esc(x.nome)}</span><span class="sub">${esc(guia(x.id).musculos ?? '')}</span></span></button>
+        <span class="meta">${estado.cargas[x.id]?.carga != null ? `${estado.cargas[x.id].carga} kg` : '—'}</span></div>`).join('')}
     </div>`;
   tela.querySelectorAll('[data-escada]').forEach((b) => b.addEventListener('click', () => {
     const e = dados.escadas.get(b.dataset.escada);
@@ -386,7 +507,8 @@ function telaAjustes() {
     <button class="botao secundario" id="exportar">Baixar backup (.json)</button>
     <label class="botao secundario" style="text-align:center">Restaurar backup<input type="file" id="importar" accept="application/json" hidden></label>
     <button class="botao secundario" id="zerar" style="color:var(--alerta)">Apagar tudo</button>
-    <p class="ajuda">Regras baseadas no posicionamento ACSM 2026 e na Recommended Routine (r/bodyweightfitness). Não substitui orientação médica.</p>`;
+    <p class="ajuda">Regras baseadas no posicionamento ACSM 2026 e na Recommended Routine (r/bodyweightfitness). Não substitui orientação médica.</p>
+    <p class="ajuda">Fotos: Free Exercise DB (domínio público). Vídeos: YouTube, de cada canal indicado na ficha; só carregam quando você toca em “Ver vídeo”.</p>`;
 
   tela.querySelectorAll('.check input').forEach((c) => c.addEventListener('change', () => {
     estado.equipamentos = [...tela.querySelectorAll('.check input:checked')].map((x) => x.value);

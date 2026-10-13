@@ -129,3 +129,47 @@ input[type="date"] { font: inherit; padding: 10px; border-radius: 10px; border: 
 .niveis li.atual { color: var(--texto); font-weight: 700; }
 .niveis li.atual::before { color: var(--destaque); }
 .linha-acoes { display: flex; gap: 8px; margin-top: 8px; }
+
+/* Fotos do exercício: início e fim do movimento se alternando, como um GIF */
+.fotos { position: relative; margin: 0 0 8px; aspect-ratio: 3 / 2; border-radius: var(--raio); overflow: hidden; background: #16181a; }
+.fotos img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; }
+.fotos.anima img:last-child { animation: alterna 2.6s infinite; }
+@keyframes alterna { 0%, 40% { opacity: 0; } 50%, 90% { opacity: 1; } 100% { opacity: 0; } }
+.fotos.compacta { aspect-ratio: 16 / 9; margin-bottom: 12px; }
+.sem-foto { display: grid; place-items: center; text-align: center; aspect-ratio: auto; padding: 20px 16px; background: var(--cartao); border: 1px dashed var(--linha); color: var(--suave); font-size: 14px; }
+@media (prefers-reduced-motion: reduce) {
+  .fotos.anima { display: grid; grid-template-columns: 1fr 1fr; }
+  .fotos.anima img { position: static; }
+  .fotos.anima img:last-child { animation: none; }
+}
+
+/* Miniatura + nome clicável (abre a ficha) */
+.mini { width: 56px; height: 56px; border-radius: 10px; object-fit: cover; flex: none; background: var(--linha); }
+.mini-vazia { display: grid; place-items: center; color: var(--suave); font-weight: 700; }
+.abre-ficha { display: flex; gap: 12px; align-items: center; flex: 1; min-width: 0; border: 0; background: none; padding: 0; text-align: left; cursor: pointer; }
+.abre-ficha .nome, .abre-ficha .sub, .abre-ficha .ver { display: block; }
+.abre-ficha .sub { font-size: 14px; color: var(--suave); }
+.abre-ficha .ver { font-size: 13px; color: var(--destaque); font-weight: 600; margin-top: 2px; }
+.linha-ex.com-mini { align-items: center; }
+.niveis li:has(.abre-ficha) { padding-left: 24px; }
+.niveis li::before { top: 50%; transform: translateY(-50%); }
+.niveis .mini { width: 44px; height: 44px; }
+.niveis li.atual .abre-ficha { font-weight: 700; }
+
+/* Ficha do exercício (abre por cima de tudo, inclusive do treino) */
+.ficha { z-index: 20; }
+.explicacao { font-size: 17px; margin: 4px 0 14px; }
+.video .botao { margin: 14px 0 4px; }
+.quadro-video { aspect-ratio: 16 / 9; border-radius: var(--raio); overflow: hidden; background: #000; margin: 14px 0 6px; }
+.quadro-video iframe { display: block; width: 100%; height: 100%; border: 0; }
+.passos { padding-left: 22px; margin: 0; }
+.passos li { margin: 0 0 10px; }
+.ponto { background: var(--destaque-claro); border-radius: 10px; padding: 10px 12px; margin: 14px 0; }
+.fatos { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; font-size: 15px; }
+.dica { color: var(--suave); margin: -10px 0 4px; }
+
+/* Glossário para iniciantes */
+details.glossario { color: var(--texto); margin-top: 14px; }
+.glossario dl { margin: 6px 0 8px; }
+.glossario dt { font-weight: 700; margin-top: 10px; }
+.glossario dd { margin: 2px 0 0; color: var(--suave); }
